@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Intelipost</title>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script>
+      var config = {
+        apiKey: "AIzaSyCHCNCodIiibcgQHvZ_vtUFXxb8c2O2x8M",
+        authDomain: "intelipost-first.firebaseapp.com",
+        databaseURL: "https://intelipost-first.firebaseio.com",
+        projectId: "intelipost-first",
+        storageBucket: "intelipost-first.appspot.com",
+        messagingSenderId: "826048936484"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/ui/2.2.1/firebase-ui-auth__en.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"  />
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/2.2.1/firebase-ui-auth.css" />
+    <link href="/stylesheets/form.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+      var uiConfig = {
+        signInSuccessUrl: 'dashboard.html',
+        signInOptions: [
+          firebase.auth.EmailAuthProvider.PROVIDER_ID
+        ]
+      };
+
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      ui.start('#firebaseui-auth-container', uiConfig);
+
+    </script>
+  </head>
+  <body>
+
+    <div class="container">
+        <h1>Case Intelipost</h1>
+        <div id="firebaseui-auth-container"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+  </body>
+</html>

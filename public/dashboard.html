@@ -241,7 +241,11 @@
       function firebaseConnect(userId) {
         var userDbRef = firebase.database().ref('users/' + userId);
         userDbRef.on('value', function(snapshot) {
-          getLinksForProfiles(snapshot.val().profiles[0]);
+          if (snapshot.val()) {
+            getLinksForProfiles(snapshot.val().profiles[0]);
+          } else {
+            jQuery("#loading").text('Sem perfis');
+          }
         });
       }
 
